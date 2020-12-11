@@ -70,12 +70,9 @@ body
 
 **create comment**
 
-
-
 `mutation {
-  addComment(id: 8965,user:"Tom Delonge", responses:"Look at this !", post:54654){
-    user
-    responses
+  addComment(comment_id:2323,user:"Deneris", responses:"test", post:3434){
+    comment_id
   }
 }`
 
