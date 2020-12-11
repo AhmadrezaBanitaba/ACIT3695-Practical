@@ -39,7 +39,7 @@ const typeDefs = gql
 
   type Mutation {
     createPost(id:ID!, user: String!, body: String!, topic: String!, comment: String): Post !
-    addComment(id:ID!, user: String!, responses: String!, post: ID!): Comment !
+    addComment(comment_id:ID!, user: String!, responses: String!, post: ID!): Comment !
   }
 
   type Subscription {
