@@ -2,7 +2,7 @@
 
 At the root directory, run `node index.js`
 
-**Sample queries and mutations**
+**Sample queries and mutations*
 
 
 **sample queries**
@@ -28,9 +28,9 @@ At the root directory, run `node index.js`
         id,
         name
         
-      },
-      responses
-    }
+    },
+    responses
+  }
   }
 }`
 
