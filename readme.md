@@ -27,9 +27,8 @@ At the root directory, run `node index.js`
       {
         id,
         name
-        
-    },
-    responses
+        },
+responses
   }
   }
 }`
