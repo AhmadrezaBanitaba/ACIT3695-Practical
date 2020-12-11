@@ -12,7 +12,7 @@ At the root directory, run `node index.js`
 **get all posts**
 
 
-query{
+`query{
   getPosts{
     id,
     body,
@@ -32,13 +32,13 @@ query{
       responses
     }
   }
-}
+}`
 
 
 **get post by id**
 
 
-query {
+`query {
   getPost(id: 3432) {
     body
     topic
@@ -47,17 +47,17 @@ query {
     }
   }
 }
-
+`
 
 
 **get posts by topic**
 
 
-query{
+`query{
   getPostsByTopics(topic: "Sports"){
 body
   }
-}
+}`
 
 
 
@@ -69,11 +69,11 @@ body
 
 
 
-mutation {
+`mutation {
   createPost(id: 2323,user:"Tom Delonge", body:"Look at this !", topic:"Astrophotography"){
     body
   }
-}
+}`
 
 
 
@@ -81,12 +81,12 @@ mutation {
 
 
 
-mutation {
+`mutation {
   addComment(id: 8965,user:"Tom Delonge", responses:"Look at this !", post:54654){
     user
     responses
   }
-}
+}`
 
 
 
