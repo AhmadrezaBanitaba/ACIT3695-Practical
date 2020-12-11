@@ -88,7 +88,23 @@ body
 }`
 
 
+**sample subscription**
+In GraphQL Playground, open two tabs. In one tab use and execute this subscription. This will start listening for added posts.
 
+`subscription {
+  newPost {
+    id
+    body
+  }
+}`
+
+In the other tab execute the following sample mutation.
+
+`mutation {
+  createPost(id: 5555,user:"Tom Delonge", body:"Look at this !", topic:"Astrophotography"){
+    body
+  }
+}`
 
 
 
