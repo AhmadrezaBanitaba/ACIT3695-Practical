@@ -1,26 +1,101 @@
-# Final for ACIT 3695 - Advanced Topics in Web Systems
-
 **To run the API**
 
 At the root directory, run `node index.js`
 
 **Sample queries and mutations**
 
-`query {`
+###########################################
+sample queries
+###########################################
 
-`Character{`
+###########################################
+get all posts
+###########################################
 
-`name`
+query{
+  getPosts{
+    id,
+    body,
+    topic,
+    user{
+      id,
+      name
+    },
+    comment{
+      id,
+      user
+      {
+        id,
+        name
+        
+      },
+      responses
+    }
+  }
+}
 
-`}`
 
-`droid(id: "2000") {`
+###########################################
+get post by id
+###########################################
 
-`Name`
+query {
+  getPost(id: 3432) {
+    body
+    topic
+    comment {
+      responses
+    }
+  }
+}
 
-`}`
 
-`}`
+###########################################
+get posts by topic
+###########################################
+
+query{
+  getPostsByTopics(topic: "Sports"){
+body
+  }
+}
+
+
+###########################################
+sample mutations
+###########################################
+
+
+
+###########################################
+create post
+###########################################
+
+
+
+mutation {
+  createPost(id: 2323,user:"Tom Delonge", body:"Look at this !", topic:"Astrophotography"){
+    body
+  }
+}
+
+
+###########################################
+create comment
+###########################################
+
+
+mutation {
+  addComment(id: 8965,user:"Tom Delonge", responses:"Look at this !", post:54654){
+    user
+    responses
+  }
+}
+
+
+
+
+
 
 **Notes**
 
