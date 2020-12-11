@@ -17,21 +17,11 @@ At the root directory, run `node index.js`
     id,
     body,
     topic,
-    user{
-      id,
-      name
-    },
-    comment{
-      id,
-      user
-      {
-        id,
-        name
-        },
-responses
+    user,
+    comment
   }
-  }
-}`
+}
+`
 
 
 **get post by id**
@@ -41,9 +31,7 @@ responses
   getPost(id: 3432) {
     body
     topic
-    comment {
-      responses
-    }
+    comment
   }
 }
 `
