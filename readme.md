@@ -1,6 +1,8 @@
 **To run the API**
 
 At the root directory, run `node index.js`
+At the root directory, run `node index.js`
+Head over to `http://localhost:4000/`
 
 **Sample queries and mutations**
 
