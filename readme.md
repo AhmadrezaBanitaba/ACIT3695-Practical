@@ -1,6 +1,6 @@
 **To run the API**
 
-At the root directory, run `node index.js`  
+At the root directory, run `npm install`
 
 At the root directory, run `node index.js`  
 
