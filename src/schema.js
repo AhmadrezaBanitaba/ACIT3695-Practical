@@ -6,7 +6,7 @@ const users = require('../db/users')
 
 
 const typeDefs = gql
-    `
+  `
 
   type User {
     id:ID!
@@ -52,36 +52,36 @@ const NEW_POST = "NEW_POST"
 
 
 const resolvers = {
-    Query: {
-        getPosts: () => posts,
-        getPost: (_, { id }) => {
-            const postsList = posts.find(b => b.id == id)
-            return postsList
-        },
-        getPostsByTopics: (_, { topic }) => {
-            const postList = posts.filter(b => b.topic == topic)
-            return postList
-        }
+  Query: {
+    getPosts: () => posts,
+    getPost: (_, { id }) => {
+      const postsList = posts.find(b => b.id == id)
+      return postsList
     },
-    Mutation: {
-        createPost: (_, { id, user, body, topic, comment }, { pubsub }) => {
-            const writePost = { id, user, body, topic, comment }
-            posts.push(writePost)
-            pubsub.publish(NEW_POST, { newPost: writePost })
-            return writePost
-        },
-        addComment: (_, { comment_id, id, user, responses, post }) => {
-            const writeComment = { comment_id, id, user, responses, post }
-            comments.push(writeComment)
-            return writeComment
-
-        }
-    },
-    Subscription: {
-        newPost: {
-            subscribe: (_, __, { pubsub }) => pubsub.asyncIterator(NEW_POST),
-        }
+    getPostsByTopics: (_, { topic }) => {
+      const postList = posts.filter(b => b.topic == topic)
+      return postList
     }
+  },
+  Mutation: {
+    createPost: (_, { id, user, body, topic, comment }, { pubsub }) => {
+      const writePost = { id, user, body, topic, comment }
+      posts.push(writePost)
+      pubsub.publish(NEW_POST, { newPost: writePost })
+      return writePost
+    },
+    addComment: (_, { comment_id, id, user, responses, post }) => {
+      const writeComment = { comment_id, id, user, responses, post }
+      comments.push(writeComment)
+      return writeComment
+
+    }
+  },
+  Subscription: {
+    newPost: {
+      subscribe: (_, __, { pubsub }) => pubsub.asyncIterator(NEW_POST),
+    }
+  }
 
 
 }
@@ -92,7 +92,7 @@ const apollo = new ApolloServer({ typeDefs, resolvers, context: ({ req, res }) =
 
 
 module.exports = {
-    resolvers,
-    typeDefs,
-    apollo
+  resolvers,
+  typeDefs,
+  apollo
 }
